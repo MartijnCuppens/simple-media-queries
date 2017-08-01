@@ -1,0 +1,37 @@
+$simple-media-queries-use-px: false !default;
+
+@function simpleMediaQueriesMin($number){
+  @if($simple-media-queries-use-px) {
+    @return $number + 0px;
+  }
+  @else {
+    @return round($number/.016) / 1000 + 0em;
+  }
+}
+
+@function simpleMediaQueriesMax($number){
+  @if($simple-media-queries-use-px) {
+    @return $number - .001px;
+  }
+  @else {
+    @return round($number/.016) / 1000 - .001em;
+  }
+}
+
+@mixin up($width) {
+  @media (min-width: simpleMediaQueriesMin($width)) {
+    @content;
+  }
+}
+
+@mixin down($width) {
+  @media (max-width: simpleMediaQueriesMax($width)) {
+    @content;
+  }
+}
+
+@mixin between($min, $max) {
+  @media (min-width: simpleMediaQueriesMin($min)) and (max-width: simpleMediaQueriesMax($max)) {
+    @content;
+  }
+}
