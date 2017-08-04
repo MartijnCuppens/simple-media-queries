@@ -1,0 +1,27 @@
+{
+  "name": "simple-media-queries",
+  "version": "1.0.0",
+  "description": "Simple SCSS-mixins to generate media queries",
+  "main": "scss/_simple-media-queries.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MartijnCuppens/simple-media-queries.git"
+  },
+  "keywords": [
+    "media",
+    "queries",
+    "responsive",
+    "scss",
+    "sass",
+    "rwd"
+  ],
+  "author": "Martijn Cuppens",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MartijnCuppens/simple-media-queries/issues"
+  },
+  "homepage": "https://github.com/MartijnCuppens/simple-media-queries#readme"
+}

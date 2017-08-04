@@ -1,21 +1,9 @@
-$simple-media-queries-use-px: false !default;
-
-@function simpleMediaQueriesMin($number){
-  @if($simple-media-queries-use-px) {
-    @return $number + 0px;
-  }
-  @else {
-    @return round($number/.016) / 1000 + 0em;
-  }
+@function simpleMediaQueriesMin($number) {
+  @return $number + 0px;
 }
 
-@function simpleMediaQueriesMax($number){
-  @if($simple-media-queries-use-px) {
-    @return $number - .001px;
-  }
-  @else {
-    @return round($number/.016) / 1000 - .001em;
-  }
+@function simpleMediaQueriesMax($number) {
+  @return $number - .01px;
 }
 
 @mixin up($width) {

@@ -1,0 +1,25 @@
+{
+  "name": "Simple media queries",
+  "description": "Simple SCSS-mixins to generate media queries",
+  "main": "scss/_simple-media-queries.scss",
+  "authors": [
+    "Martijn Cuppens"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "media",
+    "queries",
+    "responsive",
+    "scss",
+    "sass",
+    "rwd"
+  ],
+  "homepage": "https://github.com/MartijnCuppens/simple-media-queries",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
