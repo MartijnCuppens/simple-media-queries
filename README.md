@@ -21,6 +21,10 @@ This repository contains SCSS-mixins which allow you to easily use media queries
   @include up(1200) {
     // Theming for big screens here
   }
+
+  @include outside(600, 1200) {
+    // Theming for screens below 600px and above 1200px 
+  }
 }
 ```
 

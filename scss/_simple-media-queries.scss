@@ -23,3 +23,9 @@
     @content;
   }
 }
+
+@mixin outside($min, $max) {
+  @media (max-width: simpleMediaQueriesMax($min)), (min-width: simpleMediaQueriesMin($max)) {
+    @content;
+  }
+}
