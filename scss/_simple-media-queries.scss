@@ -3,7 +3,7 @@
 }
 
 @function simpleMediaQueriesMax($number) {
-  @return $number - .01px;
+  @return $number - .02px;
 }
 
 @mixin up($width) {
