@@ -1,3 +1,5 @@
+
+
 @function simpleMediaQueriesMin($number) {
   @return $number + 0px;
 }
@@ -6,26 +8,57 @@
   @return $number - .02px;
 }
 
+@function getWidth($width) {
+  @if (type-of($width) == "number") {
+    @return $width;
+  }
+  @if (type-of($width) == "string") {
+    $grid-breakpoints: false !default;
+    @if (not $grid-breakpoints or type-of($grid-breakpoints) != "map"){
+      @return null;
+    }
+    $w: map-get($grid-breakpoints, $width);
+    @return $w;
+  }
+  @return;
+}
+
 @mixin up($width) {
-  @media (min-width: simpleMediaQueriesMin($width)) {
-    @content;
+  $width: getWidth($width);
+  @if ($width) {
+    @media (min-width: simpleMediaQueriesMin($width)) {
+      @content;
+    }
   }
 }
 
 @mixin down($width) {
-  @media (max-width: simpleMediaQueriesMax($width)) {
-    @content;
+  $width: getWidth($width);
+  @if ($width) {
+    @media (max-width: simpleMediaQueriesMax($width)) {
+      @content;
+    }
   }
 }
 
 @mixin between($min, $max) {
-  @media (min-width: simpleMediaQueriesMin($min)) and (max-width: simpleMediaQueriesMax($max)) {
-    @content;
+  $min: getWidth($min);
+  $max: getWidth($max);
+
+  @if ($min and $max) {
+    @media (min-width: simpleMediaQueriesMin($min)) and (max-width: simpleMediaQueriesMax($max)) {
+      @content;
+    }
   }
 }
 
 @mixin outside($min, $max) {
-  @media (max-width: simpleMediaQueriesMax($min)), (min-width: simpleMediaQueriesMin($max)) {
-    @content;
+  $min: getWidth($min);
+  $max: getWidth($max);
+
+  @if ($min and $max) {
+    @media (max-width: simpleMediaQueriesMax($min)), (min-width: simpleMediaQueriesMin($max)) {
+      @content;
+    }
   }
 }
