@@ -1,6 +1,6 @@
 {
   "name": "simple-media-queries",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Simple SCSS-mixins to generate media queries",
   "main": "scss/_simple-media-queries.scss",
   "scripts": {

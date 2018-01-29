@@ -20,7 +20,7 @@
     $w: map-get($grid-breakpoints, $width);
     @return $w;
   }
-  @return;
+  @return null;
 }
 
 @mixin up($width) {
